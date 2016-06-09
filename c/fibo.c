@@ -1,24 +1,12 @@
 #include <stdio.h>
-unsigned long long int fibo(unsigned int num){
-	unsigned long long int answer = 0;
-	switch(num){
-		case 1:
-		case 2:
-			return 1;
-		default:
-			answer = fibo(num-2) + fibo(num-1);
-			return answer;
-	}
+unsigned long long int fibo(unsigned long long int i, unsigned long long int j, unsigned int num){
+	return num?fibo(j,i+j,num-1):i;
 }
 
 int main (void){
 	unsigned int num;
 	scanf("%u",&num);
-	if(!num){
-		puts("Error!");
-	} else {
-		printf("%llu\n",fibo(num));
-	}
+	printf("%llu\n",fibo(0,1,num));
 	return 0;
 }
 
