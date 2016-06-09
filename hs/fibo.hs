@@ -11,7 +11,6 @@ fibo x
         fibs = 0 : 1 : walk fibs (x - 1)
 
 walk :: [Integer] -> Integer -> [Integer]
-walk (x : y : zs) n
-    | n == 0 = []
-    | otherwise = (x + y) : walk (y : zs) (n - 1)
+walk _ 0 = []
+walk (x : y : zs) n = (x + y) : walk (y : zs) (n - 1)
 walk _ _ = error "unreachable"
