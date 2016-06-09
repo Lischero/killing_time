@@ -6,7 +6,7 @@ main = readLn >>= print . fibo
 fibo :: Integer -> Integer
 fibo x = last fibs
     where
-        fibs = walk (0 : 1 : fibs) x
+        fibs = 0 : 1 : walk fibs x
 
 walk :: [Integer] -> Integer -> [Integer]
 walk (x : y : zs) n
