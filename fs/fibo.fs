@@ -8,7 +8,6 @@ let fibs n = seq {
     for i = 1 to n do
         pre <- (snd pre, fst pre + snd pre)
         yield (snd pre)
-
 }
 
 let fibo = function
