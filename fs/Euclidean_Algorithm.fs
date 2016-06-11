@@ -1,6 +1,6 @@
 open System
 
-let rec euclidean (a: int) (b: int) =
+let rec euclidean a b =
     match a % b with
         | 0 -> b
         | m -> euclidean b m
