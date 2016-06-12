@@ -14,5 +14,4 @@ let fibo = function
     | x when x < 2 -> x
     | x -> Seq.item x <| fibs x
 
-let a = int <| Console.ReadLine()
-printfn "%d" <| fibo a
+Console.ReadLine() |> int |> fibo |> printfn "%d"
