@@ -2,7 +2,6 @@ import Control.Arrow
 import Data.List
 
 main = getLine
-    >> getLine
     >>= print . mergeSort . map (read :: String -> Int) . words
 
 mergeSort :: (Ord a) => [a] -> [a]

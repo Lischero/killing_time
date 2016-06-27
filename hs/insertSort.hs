@@ -3,7 +3,6 @@ import Data.List
 import Data.Monoid
 
 main = getLine
-    >> getLine
     >>= print . insertSortWithCount . map (read :: String -> Int) . words
 
 insertSortWithCount :: (Ord a) => [a] -> ([a], Int)
