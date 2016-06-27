@@ -3,13 +3,13 @@ int exchange_count = 0;
 void insertSort(int *p, int N){
 	for(int unsorted = 1; unsorted < N; unsorted++){
 		int pivot = p[unsorted];
-		int sorted = unsorted - 1;
-		while(sorted >= 0 && p[sorted] > pivot){
-			p[sorted+1] = p[sorted];
+		int sorted = unsorted;
+		while(sorted > 0 && p[sorted] > pivot){
+			p[sorted] = p[sorted-1];
 			sorted--;
 			exchange_count++;
 		}
-		p[sorted+1] = pivot;
+		p[sorted] = pivot;
 	}
 }
 
