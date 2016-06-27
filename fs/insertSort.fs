@@ -13,7 +13,6 @@ let rec insertSort = function
     | x :: xs -> innerISort x <| insertSort xs
     | _ -> []
 
-Console.ReadLine() |> ignore
 Console.ReadLine().Split(' ')
     |> Array.map int
     |> Array.toList

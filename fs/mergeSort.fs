@@ -19,7 +19,6 @@ let rec mergeSort = function
         merge (mergeSort xs) (mergeSort ys)
     | xs -> xs
 
-Console.ReadLine() |> ignore
 Console.ReadLine().Split(' ')
     |> Array.map (int)
     |> Array.toList
