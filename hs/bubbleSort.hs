@@ -1,10 +1,9 @@
 import Control.Arrow (second)
-import Control.Monad.Writer 
+import Control.Monad.Writer
 import Data.Monoid
 
 main :: IO ()
 main = getLine
-    >> getLine
     >>= print . bubbleSortWithCount . map (read :: String -> Int) . words
 
 bubbleSortWithCount :: (Ord a) => [a] -> ([a], Int)
