@@ -1,8 +1,10 @@
 open System
 
-let rec drop n = function
-    | x :: xs when n > 0 -> drop (n - 1) xs
-    | xs -> xs
+let rec splitAt n = function
+    | x :: xs when n  > 0 ->
+        let (ys, zs) = splitAt (n - 1) xs
+        (x :: ys, zs)
+    | xs -> ([], xs)
 
 let rec merge xs ys =
     match xs, ys with
@@ -14,8 +16,7 @@ let rec merge xs ys =
 let rec mergeSort = function
     | (x :: y :: zs) ->
         let n = 1 + List.length zs / 2
-        let xs = List.take n (x :: y :: zs)
-        let ys = drop n (x :: y :: zs)
+        let (xs, ys) = splitAt n <| x :: y :: zs
         merge (mergeSort xs) (mergeSort ys)
     | xs -> xs
 
