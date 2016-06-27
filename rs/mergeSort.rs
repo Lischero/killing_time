@@ -48,7 +48,7 @@ fn merge(xs: &mut Vec<i64>, l: usize, m: usize, r: usize) {
             },
             (Some(x), None) => x,
             (_, Some(y)) => y,
-            (_, _) => unreachable!(),
+            _ => unreachable!(),
         };
     }
 }
