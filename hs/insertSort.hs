@@ -1,5 +1,4 @@
 import Control.Monad.Writer
-import Data.List
 import Data.Monoid
 
 main = getLine
