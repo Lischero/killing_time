@@ -16,7 +16,7 @@ object Main {
                 case (x :: xs, y :: ys) if y > x => x :: merge(xs, y :: ys)
                 case (x :: xs, y :: ys) => y :: merge(x :: xs, ys)
                 case (_ :: _, Nil) => xs
-                case (_, _) => ys
+                case _ => ys
             }
         }
 

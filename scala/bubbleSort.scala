@@ -27,7 +27,7 @@ object Main {
             case a :: b :: cs =>
                 val (res, f) = innerBSort (b :: cs)
                 (a :: res, f)
-            case xs => (xs, false)
+            case _ => (xs, false)
         }
     }
 }

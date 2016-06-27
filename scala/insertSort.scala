@@ -16,7 +16,7 @@ object Main {
             case x :: xs =>
                 val res = insertSort(xs)
                 innerISort(x, res)
-            case xs => xs
+            case _ => xs
         }
     }
 
@@ -25,7 +25,7 @@ object Main {
             case x :: xs if p > x =>
                 count += 1
                 x :: innerISort(p, xs)
-            case xs =>
+            case _ =>
                 p :: xs
         }
     }
