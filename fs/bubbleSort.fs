@@ -17,7 +17,8 @@ let rec bubbleSort xs =
     | (res, true) -> bubbleSort res
     | (res, _) -> res
 
-Array.map (int) (Console.ReadLine().Split(' '))
+Console.ReadLine().Split(' ')
+    |> Array.map int
     |> Array.toList
     |> bubbleSort
     |> List.iter (printf "%d ")
